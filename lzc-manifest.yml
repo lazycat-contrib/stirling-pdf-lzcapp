@@ -1,0 +1,12 @@
+application:
+  subdomain: stirling-pdf
+  public_path:
+    - /
+  upstreams:
+    - location: /
+      backend: http://stirling-pdf:8080/
+services:
+  stirling-pdf:
+    image: docker.1ms.run/stirlingtools/stirling-pdf:2.12.0
+    binds:
+      - /lzcapp/var/configs:/configs
