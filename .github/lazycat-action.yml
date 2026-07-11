@@ -24,9 +24,7 @@ images:
     channel: stable
     tag_regex: '^v?\d+\.\d+\.\d+$'
     delivery:
-      mode: mirror
-      image_template: docker.1ms.run/stirlingtools/stirling-pdf:{tag}
-      require_digest_match: true
+      mode: direct
 
 stores:
   official:
