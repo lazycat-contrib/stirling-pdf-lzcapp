@@ -1,0 +1,38 @@
+version: 1
+
+project:
+  root: .
+  build_config: lzc-build.yml
+  package_file: package.yml
+  output: dist/stirling-pdf.lpk
+
+update:
+  strategy: publish
+  allow_downgrade: false
+  version_source:
+    type: image
+    image: stirling-pdf
+
+build:
+  run_buildscript: false
+
+images:
+  - id: stirling-pdf
+    target: service
+    service: stirling-pdf
+    source: stirlingtools/stirling-pdf
+    channel: stable
+    tag_regex: '^v?\d+\.\d+\.\d+$'
+    delivery:
+      mode: mirror
+      image_template: docker.1ms.run/stirlingtools/stirling-pdf:{tag}
+      require_digest_match: true
+
+stores:
+  official:
+    enabled: false
+  private:
+    enabled: true
+    skip_if_version_exists: true
+    name: Stirling PDF
+    summary: 本地部署的 Web PDF 处理工具
