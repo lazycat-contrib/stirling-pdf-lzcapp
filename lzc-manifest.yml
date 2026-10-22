@@ -7,7 +7,7 @@ application:
       backend: http://stirling-pdf:8080/
 services:
   stirling-pdf:
-    # upstream: stirlingtools/stirling-pdf:3.2.0
-    image: stirlingtools/stirling-pdf:3.2.0
+    # upstream: stirlingtools/stirling-pdf:3.2.1
+    image: stirlingtools/stirling-pdf:3.2.1
     binds:
       - /lzcapp/var/configs:/configs
