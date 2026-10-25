@@ -1,5 +1,5 @@
 package: community.lazycat.app.stirling-pdf
-version: 3.2.1
+version: 3.2.2
 name: Stirling PDF
 description: "A locally hosted web-based PDF manipulation tool using Docker"
 min_os_version: 1.5.0
